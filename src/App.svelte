@@ -71,7 +71,7 @@
     table{
         border-collapse: collapse;
     }
-    .fifth {
+    .tenth {
         background-color: gainsboro;
     }
     td {
@@ -97,7 +97,7 @@
                     <td 
                         bind:this={cellDomElement}
                         style="top: {realRowIndex*cellHeight}px; left: {realColumnIndex*cellWidth}px"
-                        class:fifth={realColumnIndex % 10 === 0 || realRowIndex % 10 === 0}
+                        class:tenth={realColumnIndex % 10 === 0 || realRowIndex % 10 === 0}
                         title={cellContent}>
                         {cellContent}
                     </td>

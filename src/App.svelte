@@ -11,8 +11,10 @@
 
     const request = createEventDispatcher();
 
-    // pour ne pas surcharger le process on throttle la mise à jour du tableau (on vise 30fps => 32ms)
-    const throttleRequestOfNewArray = throttle(requestNewArray, 32);
+    const WANTED_FPS = 30;
+
+    // pour ne pas surcharger le process on throttle la mise à jour du tableau
+    const throttleRequestOfNewArray = throttle(requestNewArray, 1000/WANTED_FPS);
 
     // variable qui pointera vers une cellule (la dernière ajouté au dom)
     // ceci permettra d'obtenir programmatiquement les dimension de la cellule
@@ -69,6 +71,9 @@
     table{
         border-collapse: collapse;
     }
+    .fifth {
+        background-color: gainsboro;
+    }
     td {
         position: absolute;
         max-width: 150px;
@@ -92,6 +97,7 @@
                     <td 
                         bind:this={cellDomElement}
                         style="top: {realRowIndex*cellHeight}px; left: {realColumnIndex*cellWidth}px"
+                        class:fifth={realColumnIndex % 10 === 0 || realRowIndex % 10 === 0}
                         title={cellContent}>
                         {cellContent}
                     </td>

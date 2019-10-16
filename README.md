@@ -1,7 +1,9 @@
 # infiniteArray
-Application montre comment afficher un tableau de dimension (presque) infinie tout en conservant de bonne performance de rafraîchissement.
+L'application montre comment afficher un tableau de dimension (presque) infinie tout en conservant de bonne performance de rafraîchissement.
 
 Et accessoirement permet aussi de tester la performance des librairies de construction d'interface.
+
+Cette app est accessible ici : https://infinite-array.herokuapp.com/
 
 ## Stratégie utilisée
 
